@@ -13,9 +13,6 @@ WORKDIR /Reaction
 RUN pip install -r requirements.txt
 RUN pip install --no-cache-dir -e .
 
-RUN mkdir -p /Reaction/output
-ADD https://paddleocr.bj.bcebos.com/dygraph_v2.0/en/det_r50_vd_east_v2.0_train.tar /Reaction/output
-ADD RUN tar xf /Reaction/output/det_r50_vd_east_v2.0_train.tar -C /Reaction/output
 
 ####  Adding Detection models ####
 RUN mkdir -p /Reaction/output
