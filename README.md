@@ -85,7 +85,8 @@ Result:
  
 | Input| Output Detection| OCR | Classification |
 |--------------|--------------|--------------|--------------|
-|<img src="https://github.com/TrinhThiBaoAnh/Reaction/blob/main/image/image.jpeg"> |<img src="https://github.com/TrinhThiBaoAnh/Reaction/blob/main/image/res.jpg">|TỔ CHỨC KHỦNGBO VIỆT TÂNĐỨACONLAIQUÁITHAI THỜI HẬU CHIẾN | Bình thường|
+|<img src="https://github.com/TrinhThiBaoAnh/Reaction/blob/main/image/image.jpeg" width=250px> |<img src="https://github.com/TrinhThiBaoAnh/Reaction/blob/main/image/res.jpg" width=250px>|TỔ CHỨC KHỦNGBO VIỆT TÂNĐỨACONLAIQUÁITHAI THỜI HẬU CHIẾN | Bình thường|
+|<img src="https://github.com/TrinhThiBaoAnh/Reaction/blob/main/image/sample_det/viet-tan.jpg?raw=true" width=250px>|<img src="https://github.com/TrinhThiBaoAnh/Reaction/blob/main/inference_results/det_res_viet-tan.jpg?raw=true" width=250px>|ALLION KICH DONG DONG 310| Phản động|
 
 <h2> III.Training</h2>
 <h3> Train detection </h3>
