@@ -40,7 +40,9 @@ Please put these models in ./vietocr/weights/
 ```
 python3 demo_detect.py
 ```
-
+| Input| Output |
+|--------------|-------|
+|<img src="https://github.com/TrinhThiBaoAnh/Reaction/blob/main/image/image.jpeg"> |<img src="https://github.com/TrinhThiBaoAnh/Reaction/blob/main/image/res.jpg">|
 <h3>Demo OCR with vgg_transformer backbone </h3>
 
 ```
