@@ -131,6 +131,7 @@ Result:
 
 <h3> Train OCR </h3>
 <h3>Train OCR with vgg_transformer backbone </h3>
+
 ```
 !python3 train_ocr.py --config 'vgg_transformer' \
                       --data-root './dataset/ocr/data_line/' \
@@ -144,6 +145,7 @@ Result:
 ```
 
 <h3>Train OCR with vgg_seq2seq backbone </h3>
+
 ```
 !python3 train_ocr.py --config 'vgg_seq2seq' \
                       --data-root './dataset/ocr/data_line/' \
