@@ -21,16 +21,13 @@ Please put these models in ./vietocr/weights/
 | vgg_transformer |  https://drive.google.com/file/d/1KFBlcJxZQ2u8uULyPIFRo-Y9-9CPPVqI/view?usp=sharing|
 
 <h4> 3.2 DET </h4>
+Please put these models in ./pretrain_models/
 
-```
-!cd${Your_workspace}
-# Download the pre-trained model of MobileNetV3
-!wget -P ./pretrain_models/ https://paddleocr.bj.bcebos.com/pretrained/MobileNetV3_large_x0_5_pretrained.pdparams
-# # or, download the pre-trained model of ResNet18_vd
-!wget -P ./pretrain_models/ https://paddleocr.bj.bcebos.com/pretrained/ResNet18_vd_pretrained.pdparams
-# # or, download the pre-trained model of ResNet50_vd
-!wget -P ./pretrain_models/ https://paddleocr.bj.bcebos.com/pretrained/ResNet50_vd_ssld_pretrained.pdparams
-```
+| Backbone| Link |
+|--------------|-------|
+| MobileNetV3 | https://paddleocr.bj.bcebos.com/pretrained/MobileNetV3_large_x0_5_pretrained.pdparams|
+| ResNet18 | https://paddleocr.bj.bcebos.com/pretrained/ResNet18_vd_pretrained.pdparams |
+| ResNet50 |  https://paddleocr.bj.bcebos.com/pretrained/ResNet50_vd_ssld_pretrained.pdparams|
 
 <h2> II. Quick started </h2>
 
@@ -42,7 +39,8 @@ python3 demo_detect.py
 ```
 | Input| Output |
 |--------------|-------|
-|<img src="https://github.com/TrinhThiBaoAnh/Reaction/blob/main/image/image.jpeg"> |<img src="https://github.com/TrinhThiBaoAnh/Reaction/blob/main/image/res.jpg">|
+|<img src="https://github.com/TrinhThiBaoAnh/Reaction/blob/main/image/sample_det/333500806_1423207085151590_8835670948295859802_n.jpg?raw=true" width="350"> |<img src="https://github.com/TrinhThiBaoAnh/Reaction/blob/main/inference_results/det_res_333500806_1423207085151590_8835670948295859802_n.jpg" width="350">|
+
 <h3>Demo OCR with vgg_transformer backbone </h3>
 
 ```
@@ -81,7 +79,14 @@ python3 end2end.py --det_algorithm="DB" \
                     --use_gpu=True \
                     --config './config_vgg_transformer.yml' \
                     --weight-ocr './vietocr/weights/vgg_transformer.pth'
+
 ```
+Result:
+ 
+| Input| Output Detection| OCR | Classification |
+|--------------|--------------|--------------|--------------|
+|<img src="https://github.com/TrinhThiBaoAnh/Reaction/blob/main/image/image.jpeg"> |<img src="https://github.com/TrinhThiBaoAnh/Reaction/blob/main/image/res.jpg">|TỔ CHỨC KHỦNGBO VIỆT TÂNĐỨACONLAIQUÁITHAI THỜI HẬU CHIẾN | Bình thường|
+
 <h2> III.Training</h2>
 <h3> Train detection </h3>
 
