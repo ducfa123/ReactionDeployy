@@ -1,5 +1,9 @@
+FROM registry.baidubce.com/paddlepaddle/paddle:latest-dev-cuda11.4.1-cudnn8-gcc82
 
-RUN pip3 install paddlepaddle-gpu==2.4.2.post117 -f https://www.paddlepaddle.org.cn/whl/linux/mkl/avx/stable.html
+
+RUN pip3 install --upgrade pip -i https://mirror.baidu.com/pypi/simple
+RUN pip3 install paddlehub --upgrade -i https://mirror.baidu.com/pypi/simple
+RUN pip3 install install paddlepaddle-gpu==2.4.2 -i https://mirror.baidu.com/pypi/simple
 RUN pip3 install einops
 RUN pip3 install Levenshtein
 RUN pip3 install "paddleocr>=2.0.1"
@@ -53,3 +57,6 @@ RUN mkdir -p /Reaction/vietocr/weights
 ADD https://drive.google.com/uc?id=1nTKlEog9YFK74kPyX0qLwCWi60_YHHk4 /Reaction/vietocr/weights
 ADD https://drive.google.com/uc?id=13327Y1tz1ohsm5YZMyXVMPIOjoOA0OaA /Reaction/vietocr/weights
 
+EXPOSE 8868
+
+CMD ["/bin/bash","-c","hub install deploy/hubserving/ocr_system/ && hub serving start -m ocr_system"]
