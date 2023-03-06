@@ -21,8 +21,8 @@ ADD RUN tar xf /Reaction/output/det_r50_vd_east_v2.0_train.tar -C /Reaction/outp
 RUN mkdir -p /Reaction/output
 
 #EAST	ResNet50_vd	88.71%	81.36%	84.88%	trained model
-ADD https://paddleocr.bj.bcebos.com/dygraph_v2.0/en/det_r50_vd_east_v2.0_train.tar /Reaction/output
-ADD RUN tar xf /Reaction/output/det_r50_vd_east_v2.0_train.tar -C /Reaction/output
+#ADD https://paddleocr.bj.bcebos.com/dygraph_v2.0/en/det_r50_vd_east_v2.0_train.tar /Reaction/output
+#ADD RUN tar xf /Reaction/output/det_r50_vd_east_v2.0_train.tar -C /Reaction/output
 
 #EAST	MobileNetV3	78.20%	79.10%	78.65%	trained model
 ADD https://paddleocr.bj.bcebos.com/dygraph_v2.0/en/det_mv3_east_v2.0_train.tar /Reaction/output
@@ -33,24 +33,25 @@ ADD https://paddleocr.bj.bcebos.com/dygraph_v2.0/en/det_r50_vd_db_v2.0_train.tar
 ADD RUN tar xf /Reaction/output/det_r50_vd_db_v2.0_train.tar -C /Reaction/output
 
 #DB	MobileNetV3	77.29%	73.08%	75.12%	trained model
-ADD https://paddleocr.bj.bcebos.com/dygraph_v2.0/en/det_mv3_db_v2.0_train.tar /Reaction/output
-ADD RUN tar xf /Reaction/output/det_mv3_db_v2.0_train.tar -C /Reaction/output
+#ADD https://paddleocr.bj.bcebos.com/dygraph_v2.0/en/det_mv3_db_v2.0_train.tar /Reaction/output
+#ADD RUN tar xf /Reaction/output/det_mv3_db_v2.0_train.tar -C /Reaction/output
 
 #SAST	ResNet50_vd	91.39%	83.77%	87.42%	trained model
-ADD https://paddleocr.bj.bcebos.com/dygraph_v2.0/en/det_r50_vd_sast_icdar15_v2.0_train.tar /Reaction/output
-ADD RUN tar xf /Reaction/output/det_r50_vd_sast_icdar15_v2.0_train.tar -C /Reaction/output
+#ADD https://paddleocr.bj.bcebos.com/dygraph_v2.0/en/det_r50_vd_sast_icdar15_v2.0_train.tar /Reaction/output
+#ADD RUN tar xf /Reaction/output/det_r50_vd_sast_icdar15_v2.0_train.tar -C /Reaction/output
 
 #PSE	ResNet50_vd	85.81%	79.53%	82.55%	
-ADD https://paddleocr.bj.bcebos.com/dygraph_v2.1/en_det/det_r50_vd_pse_v2.0_train.tar /Reaction/output
-ADD RUN tar xf /Reaction/output/det_r50_vd_pse_v2.0_train.tar -C /Reaction/output
+#ADD https://paddleocr.bj.bcebos.com/dygraph_v2.1/en_det/det_r50_vd_pse_v2.0_train.tar /Reaction/output
+#ADD RUN tar xf /Reaction/output/det_r50_vd_pse_v2.0_train.tar -C /Reaction/output
 
 #PSE	MobileNetV3	82.20%	70.48%	75.89%	
 ADD https://paddleocr.bj.bcebos.com/dygraph_v2.1/en_det/det_mv3_pse_v2.0_train.tar /Reaction/output
 ADD RUN tar xf /Reaction/output/det_mv3_pse_v2.0_train.tar -C /Reaction/output
 
 #DB++	ResNet50	90.89%	82.66%	86.58%	pretrained model/trained model
-ADD https://paddleocr.bj.bcebos.com/dygraph_v2.1/en_det/det_r50_db%2B%2B_icdar15_train.tar /Reaction/output
-ADD RUN tar xf /Reaction/output/det_r50_db%2B%2B_icdar15_train.tar -C /Reaction/output
+
+#ADD https://paddleocr.bj.bcebos.com/dygraph_v2.1/en_det/det_r50_db%2B%2B_icdar15_train.tar /Reaction/output
+#ADD RUN tar xf /Reaction/output/det_r50_db%2B%2B_icdar15_train.tar -C /Reaction/output
 
 ####  Adding OCR models ####
 RUN mkdir -p /Reaction/vietocr/weights
