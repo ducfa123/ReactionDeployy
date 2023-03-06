@@ -29,6 +29,29 @@ Please put these models in ./pretrain_models/
 | ResNet18 | https://paddleocr.bj.bcebos.com/pretrained/ResNet18_vd_pretrained.pdparams |
 | ResNet50 |  https://paddleocr.bj.bcebos.com/pretrained/ResNet50_vd_ssld_pretrained.pdparams|
 
+### Text Detection Algorithms
+
+Supported text detection algorithms (More information [Here](https://github.com/PaddlePaddle/PaddleOCR/blob/release/2.6/doc/doc_en/algorithm_overview_en.md)):
+- [x]  [DB && DB++]
+- [x]  [EAST]
+- [x]  [SAST]
+- [x]  [PSENet]
+- [x]  [FCENet]
+- [x]  [DRRG]
+
+Please put these model in ./output to use for inference process
+
+|Model|Backbone|Precision|Recall|Hmean|Download link|
+| --- | --- | --- | --- | --- | --- |
+|EAST|ResNet50_vd|88.71%|81.36%|84.88%|[trained model](https://paddleocr.bj.bcebos.com/dygraph_v2.0/en/det_r50_vd_east_v2.0_train.tar)|
+|EAST|MobileNetV3|78.20%|79.10%|78.65%|[trained model](https://paddleocr.bj.bcebos.com/dygraph_v2.0/en/det_mv3_east_v2.0_train.tar)|
+|DB|ResNet50_vd|86.41%|78.72%|82.38%|[trained model](https://paddleocr.bj.bcebos.com/dygraph_v2.0/en/det_r50_vd_db_v2.0_train.tar)|
+|DB|MobileNetV3|77.29%|73.08%|75.12%|[trained model](https://paddleocr.bj.bcebos.com/dygraph_v2.0/en/det_mv3_db_v2.0_train.tar)|
+|SAST|ResNet50_vd|91.39%|83.77%|87.42%|[trained model](https://paddleocr.bj.bcebos.com/dygraph_v2.0/en/det_r50_vd_sast_icdar15_v2.0_train.tar)|
+|PSE|ResNet50_vd|85.81%|79.53%|82.55%|[trianed model](https://paddleocr.bj.bcebos.com/dygraph_v2.1/en_det/det_r50_vd_pse_v2.0_train.tar)|
+|PSE|MobileNetV3|82.20%|70.48%|75.89%|[trianed model](https://paddleocr.bj.bcebos.com/dygraph_v2.1/en_det/det_mv3_pse_v2.0_train.tar)|
+|DB++|ResNet50|90.89%|82.66%|86.58%|[pretrained model](https://paddleocr.bj.bcebos.com/dygraph_v2.1/en_det/ResNet50_dcn_asf_synthtext_pretrained.pdparams)/[trained model](https://paddleocr.bj.bcebos.com/dygraph_v2.1/en_det/det_r50_db%2B%2B_icdar15_train.tar)|
+
 <h2> II. Quick started </h2>
 
 <h3>Demo detection </h3>
@@ -107,7 +130,7 @@ Result:
 ```
 
 <h3> Train OCR </h3>
-
+<h3>Train OCR with vgg_transformer backbone </h3>
 ```
 !python3 train_ocr.py --config 'vgg_transformer' \
                       --data-root './dataset/ocr/data_line/' \
@@ -119,8 +142,8 @@ Result:
                       --export './weights/transformerocr.pth' \
                       --checkpoint './weights/transformerocr.pth'
 ```
-Example: 
 
+<h3>Train OCR with vgg_seq2seq backbone </h3>
 ```
 !python3 train_ocr.py --config 'vgg_seq2seq' \
                       --data-root './dataset/ocr/data_line/' \
