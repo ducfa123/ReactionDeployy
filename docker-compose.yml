@@ -1,0 +1,12 @@
+version: '3.0'
+
+services:
+  reaction:
+    build: .
+    command: python3 app.py
+    volumes:
+      - .:/app
+      - /home/bmdcntt56/Documents/workspace/be_sensitive_infomation/BE/webDir:/app/webDir
+
+    ports:
+      - 5678:5678
