@@ -20,7 +20,8 @@ def check_is_reaction(reaction_text_lst, img_text):
     return False
 
 
-def infer(img_path):
+async def infer(img_path):
+    print(img_path)
     # load model ocr
     config = Cfg.load_config_from_name('vgg_transformer')
     config['weights'] = './vietocr/weights/vgg_transformer.pth'
@@ -28,7 +29,7 @@ def infer(img_path):
     config['cnn']['pretrained'] = False
     config['device'] = 'cuda:0'
     config['predictor']['beamsearch'] = False
-    detector = Predictor(config)
+    detector = Predictor(config)    
 
     # Also switch the language by modifying the lang parameter
     # The model file will be downloaded automatically when executed for the first time
@@ -39,6 +40,7 @@ def infer(img_path):
     mat = cv2.imread(img_path)
     image_name = img_path.split("/")[-2]
     # f = open("./output_ocr/{0}".format(image_name),"w+")
+
 
     boxes = [line for line in result]
     for box in boxes:
@@ -59,12 +61,16 @@ def infer(img_path):
         cv2.imwrite("image/res{0}.jpg".format(count), crop_img)
     res = remove_accent(res)
     print(res)
-    reaction_text_lst = open("./quan_diem_xau_doc_text.txt", "r").readlines()
+    reaction_text_lst = open("./quan_diem_xau_doc_text.txt", "r", encoding="utf8").readlines()
     processed_lst = [remove_accent(txt.upper().replace("\n", ""))
                      for txt in reaction_text_lst]
     if check_is_reaction(processed_lst, res):
         print("Phản động")
-        return true
+        return {
+            "response": True
+            }
     else:
         print("Bình thường")
-        return false
+        return {
+            "response": False   #
+            }

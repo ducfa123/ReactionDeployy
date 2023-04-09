@@ -271,7 +271,7 @@ if __name__ == "__main__":
     count = 0
     total_time = 0
     draw_img_save = args.inference_results
-    reaction_text_lst = open("./quan_diem_xau_doc_text.txt","r").readlines()
+    reaction_text_lst = open("./quan_diem_xau_doc_text.txt","r", encoding="utf8").readlines()
     processed_lst = [remove_accent(txt.upper().replace("\n","")) for txt in reaction_text_lst]
     if args.warmup:
         img = np.random.uniform(0, 255, [640, 640, 3]).astype(np.uint8)

@@ -1,0 +1,3 @@
+pretrain_models/*
+vietocr/weights/*
+output/*

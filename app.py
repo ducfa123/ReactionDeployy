@@ -12,8 +12,8 @@ import uvicorn
 import asyncio
 
 from demo_end2end import infer
-
-SOCKET_BACKEND_URL = 'http://172.18.0.1:6789'
+#IP config 
+SOCKET_BACKEND_URL = 'http://localhost:6789'
 PORT = 5678
 
 app = FastAPI()
